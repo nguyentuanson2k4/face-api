@@ -11,6 +11,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 # Install system dependencies for OpenCV and insightface
 RUN apt-get update && apt-get install -y \
+    build-essential \
     libgomp1 \
     libsm6 \
     libxext6 \
