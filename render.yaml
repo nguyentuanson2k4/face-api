@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: face-recognition-service
+    runtime: docker
+    region: singapore
+    plan: standard
+    
+    # Health check
+    healthCheckPath: /health
+    healthCheckInterval: 30
+    
+    # Environment variables
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: PYTHONDONTWRITEBYTECODE
+        value: 1
+    
+    # Autoscaling (optional - for paid plans)
+    # autoDeploy: yes
+    # scaling:
+    #   minInstances: 1
+    #   maxInstances: 5
+    #   targetMemoryUtilizationPercentage: 70
+    #   targetCPUUtilizationPercentage: 80
